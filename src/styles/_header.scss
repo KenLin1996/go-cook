@@ -1,0 +1,15 @@
+.header-nav {
+  display: flex;
+  justify-content: center;
+  .header-nav-ul {
+    margin: 0rem 6rem;
+
+    // Header.js nav
+    .header-nav-link {
+      display: inline-block;
+
+      font-size: 1.25rem;
+      width: 100%;
+    }
+  }
+}
