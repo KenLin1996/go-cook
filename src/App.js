@@ -1,24 +1,27 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import Layout from "./Layout";
 import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
-import Breakfast from "./pages/Breakfast";
+import SignUp from "./pages/SignUp";
+
 import "./styles/style.css";
+import RecipeCategories from "./pages/RecipeCategories";
+import SearchResult from "./pages/SearchResult";
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Layout>
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Homepage />}></Route>
-            <Route path="logIn" element={<Login />}></Route>
-            <Route path="breakfast" element={<Breakfast />}></Route>
-          </Route>
+          <Route path="/" element={<Homepage />} />
+          <Route path="logIn" element={<Login />} />
+          <Route path="signUp" element={<SignUp />} />
+          <Route path="categories" element={<RecipeCategories />} />
+          <Route path="SearchResult" element={<SearchResult />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+      </Layout>
+    </BrowserRouter>
   );
 }
 

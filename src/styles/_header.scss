@@ -1,15 +1,28 @@
-.header-nav {
-  display: flex;
-  justify-content: center;
-  .header-nav-ul {
-    margin: 0rem 6rem;
+.header {
+  position: relative;
+  // background-color: whitesmoke;
+  // background-color: white;
+  background-color: #f1ffffb3;
+  border-bottom: solid rgba(74, 74, 74, 0.25);
 
-    // Header.js nav
-    .header-nav-link {
-      display: inline-block;
+  .header-nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 132px;
+    padding: 0px 16px 0px 0px;
 
-      font-size: 1.25rem;
-      width: 100%;
+    .header-nav-ul {
+      display: flex;
+      flex-grow: 1; /* 讓這個元素佔據剩餘空間 */
+      justify-content: space-between; /* 平均分配連接之間的空間 */
+      padding: 0px 20px;
+      line-height: 35px;
+
+      .header-nav-link {
+        display: inline-block;
+        font-size: 1.25rem;
+        width: 100%;
+      }
     }
   }
 }
