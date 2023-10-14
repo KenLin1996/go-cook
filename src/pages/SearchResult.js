@@ -3,8 +3,58 @@ import { Link } from "react-router-dom";
 import IngredientFilter from "../components/IngredientFilter";
 import noodle from "../picture/noodle.jpg";
 import RelatedSearches from "../components/RelatedSearches";
+import time from "../picture/icons8-time.png";
+import member from "../picture/icons8-member.png";
+import teacher from "../picture/五條悟老師.jpeg";
 
 const SearchResult = () => {
+  function ResultLi() {
+    return (
+      <li className="result-li">
+        <div className="picture-wrapper">
+          <img src={noodle} />
+        </div>
+        <div className="li-describe">
+          <div className="describe-title">
+            <h2>
+              <Link>好吃的高麗菜飯</Link>
+            </h2>
+          </div>
+          <div className="ingredients-wrappeer">
+            <div className="ingredients-list">
+              <div>
+                <span>高麗菜</span>
+              </div>
+            </div>
+          </div>
+          <div className="time-member">
+            <ul>
+              <li>
+                <img src={time} />
+                <span>30分鐘</span>
+              </li>
+              <li>
+                <img src={member} />
+                <span>3人份</span>
+              </li>
+            </ul>
+          </div>
+          <div className="author-wrapper">
+            <span className="author-headshot">
+              <img src={teacher} />
+            </span>
+            <span className="author-name">
+              <span>五條悟</span>
+            </span>
+          </div>
+        </div>
+        {/* <div className="picture-wrapper">
+          <img src={noodle} />
+        </div> */}
+      </li>
+    );
+  }
+
   return (
     <div className="content-wrapper">
       <div className="searchResultPage main">
@@ -17,6 +67,15 @@ const SearchResult = () => {
         </header>
         <div className="content">
           <div className="content-left">
+            <div className="search-result-wrapper">
+              <ul className="result-ul">
+                <ResultLi />
+                <ResultLi />
+                <ResultLi />
+              </ul>
+            </div>
+          </div>
+          <div className="content-right">
             <RelatedSearches />
             <form className="search-result-form">
               <div className="search-container">
@@ -28,36 +87,6 @@ const SearchResult = () => {
               <IngredientFilter prop={"顯示食譜中包含："} />
               <IngredientFilter prop={"顯示食譜中不包含："} />
             </form>
-          </div>
-          <div className="content-right">
-            <div className="search-result-wrapper">
-              <ul className="result-ul">
-                <li className="result-li">
-                  <div className="li-describe">
-                    <div className="describe-title">
-                      <h2>
-                        <Link>好吃的高麗菜飯</Link>
-                      </h2>
-                    </div>
-                    <div className="ingredients-wrappeer">
-                      <div className="ingredients-list">
-                        <div>
-                          <span>高麗菜</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="time-member">耗時或人數</div>
-                    <div className="author-wrapper">
-                      <span className="author-headshot">作者照片</span>
-                      <span className="author-name">作者名字</span>
-                    </div>
-                  </div>
-                  <div className="picture-wrapper">
-                    <img src={noodle} />
-                  </div>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
