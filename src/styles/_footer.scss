@@ -1,13 +1,13 @@
 .footer-wrapper {
   //   background-color: honeydew;
-  background-color: #f0fff0ab;
-  border-top: solid rgb(74 74 74 / 8%);
+  // background-color: #f0fff0ab;
+  background-color: white;
 
   .footer {
     position: relative;
     top: 0;
     width: 100%;
-    background-color: #f0fff0ab;
+    // background-color: #f0fff0ab;
 
     width: 1176px;
 
@@ -34,6 +34,7 @@
     .footer-info {
       //   justify-content: center;
       text-align: center;
+      padding: 15px 0px;
     }
   }
 }

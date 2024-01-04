@@ -164,9 +164,18 @@
 
       background-color: white;
 
-      border: 1px solid #00000033;
+      // border: 1px solid #00000033;
       border-radius: 8px;
       margin-bottom: 8px;
+
+      box-shadow: 0 1px 5px #0000001a;
+
+      cursor: pointer; /* 将鼠标指针变为手型 */
+      user-select: none; /* 阻止文本被选中 */
+      -webkit-user-select: none; /* 适用于WebKit浏览器（如Chrome和Safari） */
+      -moz-user-select: none; /* 适用于Firefox浏览器 */
+      -ms-user-select: none; /* 适用于Microsoft Edge */
+
       .li-describe {
         flex: 1 1;
         margin: 8px;
@@ -184,19 +193,7 @@
             font-size: 14px;
           }
         }
-        .time-member {
-          font-size: 14px;
-          line-height: 20px;
-          li {
-            display: inline-flex;
-            align-items: center;
-            margin-right: 16px;
-            img {
-              width: 16px;
-              margin-right: 4px;
-            }
-          }
-        }
+
         .author-wrapper {
           // margin-top: auto;
           margin-top: 28px;

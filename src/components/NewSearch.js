@@ -9,7 +9,7 @@ const NewSearch = () => {
     <div className="NewSearch">
       <SearchWidget />
       <div className="popular-search-terms"> 熱門搜尋關鍵字 </div>
-      <div className="popular-recipes">
+      <div className="popular-recipes" style={{ marginBottom: "16px" }}>
         <ul className="recipe-list">
           <li className="recipe-item">
             <Link>麻婆豆腐</Link>

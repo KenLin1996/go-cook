@@ -71,6 +71,7 @@
     // border: 1px solid black;
     // box-shadow: 0px 1px 5px #4a4a4a;
     box-shadow: 0px 1px 5px #4a4a4a3b;
+    background-color: #ffffff;
 
     border-radius: 20px;
     .search-box {
@@ -82,10 +83,11 @@
         background-color: transparent;
 
         cursor: pointer;
-
+        width: 24px;
+        height: 24px;
         .search-icon {
-          width: 24px;
-          height: 24px;
+          // width: 24px;
+          height: 100%;
         }
       }
       .search-input {

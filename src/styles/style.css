@@ -8,6 +8,7 @@
 body {
   font-family: "Roboto", sans-serif;
   background-color: white;
+  background-color: #f8f6f2;
   font-weight: 400;
   color: #3f3e3e;
 }
@@ -27,8 +28,8 @@ ul {
   padding: 0px 150px;
   justify-content: space-between;
   align-items: center;
-  border-bottom: solid rgba(74, 74, 74, 0.25);
-  background-color: honeydew;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1019607843);
+  background-color: white;
 }
 .layout-nav .layout-nav-icon {
   display: inline-block;
@@ -109,6 +110,7 @@ ul {
 .NewSearch #search-widget {
   padding: 6px;
   box-shadow: 0px 1px 5px rgba(74, 74, 74, 0.231372549);
+  background-color: #ffffff;
   border-radius: 20px;
 }
 .NewSearch #search-widget .search-box {
@@ -119,10 +121,11 @@ ul {
   border: 0;
   background-color: transparent;
   cursor: pointer;
-}
-.NewSearch #search-widget .search-box .search-button .search-icon {
   width: 24px;
   height: 24px;
+}
+.NewSearch #search-widget .search-box .search-button .search-icon {
+  height: 100%;
 }
 .NewSearch #search-widget .search-box .search-input {
   outline: 2px solid rgba(0, 0, 0, 0);
@@ -196,6 +199,7 @@ ul {
   margin-bottom: 16px;
   padding: 16px 0;
   border-radius: 10px;
+  padding-right: 6px;
 }
 
 .recipe-card-content {
@@ -203,14 +207,17 @@ ul {
   width: 100%;
 }
 .recipe-card-content .card-content-link {
+  border: 1px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1019607843);
+  background-color: white;
   margin-right: 12px;
 }
 .recipe-card-content .card-content-link .card-content-image {
   display: block;
   overflow: hidden;
-  margin-bottom: 12px;
   position: relative;
-  border-radius: 4px;
   height: 131.5px;
   width: 177.5px;
 }
@@ -223,6 +230,9 @@ ul {
   -o-object-fit: cover;
   object-fit: cover;
 }
+.recipe-card-content .card-content-link .card-content-info {
+  padding: 10px;
+}
 .recipe-card-content .card-content-link .card-content-info .card-content-name {
   color: #564e4a;
   font-weight: 450;
@@ -230,6 +240,9 @@ ul {
 .recipe-card-content .card-content-link .card-content-info .card-content-author {
   color: #706864;
   font-size: 14px;
+}
+.recipe-card-content .card-content-link:last-child {
+  margin-right: 0px;
 }
 
 .main {
@@ -239,6 +252,10 @@ ul {
   padding-right: 16px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.wrapper {
+  background-color: #f8f6f2;
 }
 
 .activity_info {
@@ -343,7 +360,6 @@ ul {
 }
 
 .content-wrapper {
-  background-color: #f8f6f2;
   height: 100%;
 }
 
@@ -528,9 +544,14 @@ ul {
   overflow: hidden;
   display: flex;
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   margin-bottom: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1019607843);
+  cursor: pointer; /* 将鼠标指针变为手型 */
+  user-select: none; /* 阻止文本被选中 */
+  -webkit-user-select: none; /* 适用于WebKit浏览器（如Chrome和Safari） */
+  -moz-user-select: none; /* 适用于Firefox浏览器 */
+  -ms-user-select: none; /* 适用于Microsoft Edge */
 }
 .content-wrapper .content-left .result-li .li-describe {
   flex: 1 1;
@@ -546,19 +567,6 @@ ul {
 }
 .content-wrapper .content-left .result-li .li-describe .ingredients-wrappeer .ingredients-list {
   font-size: 14px;
-}
-.content-wrapper .content-left .result-li .li-describe .time-member {
-  font-size: 14px;
-  line-height: 20px;
-}
-.content-wrapper .content-left .result-li .li-describe .time-member li {
-  display: inline-flex;
-  align-items: center;
-  margin-right: 16px;
-}
-.content-wrapper .content-left .result-li .li-describe .time-member li img {
-  width: 16px;
-  margin-right: 4px;
 }
 .content-wrapper .content-left .result-li .li-describe .author-wrapper {
   margin-top: 28px;
@@ -587,15 +595,310 @@ ul {
   height: 100%;
 }
 
+.rd-wrapper {
+  width: 1176px;
+  display: flex;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.rd-wrapper .rd-content {
+  width: 66.6666%;
+}
+.rd-wrapper .rd-content .img {
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1019607843);
+  height: 550px;
+  margin: 16px 0px;
+  overflow: hidden;
+}
+.rd-wrapper .rd-content .recipeImg {
+  width: 100%;
+  height: 100%;
+  max-width: 100%; /* 新增：限制最大寬度為容器寬度 */
+  max-height: 100%; /* 新增：限制最大高度為容器高度 */
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.rd-wrapper .recipeIntroduction a {
+  display: flex;
+  cursor: pointer;
+}
+.rd-wrapper .recipeIntroduction .introductionContent {
+  margin-top: 16px;
+}
+.rd-wrapper .ingredients .ingredient-list {
+  margin-top: 16px;
+}
+.rd-wrapper .ingredients .ingredient-list ol {
+  list-style-type: none;
+}
+.rd-wrapper .ingredients .ingredient-list ol li {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.rd-wrapper .cookStep ol {
+  margin-top: 16px;
+}
+.rd-wrapper .cookStep ol li {
+  list-style-type: none;
+  margin-bottom: 16px;
+}
+.rd-wrapper .cookStep ol li .stepName {
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+.rd-wrapper .cookStep ol li .stepContent {
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+  color: "4A4A4A";
+}
+.rd-wrapper .cookStep ol li .stepImg {
+  display: flex;
+  margin-bottom: 8px;
+}
+.rd-wrapper .cookStep ol li .stepImg div {
+  width: auto;
+  margin-right: 8px;
+}
+.rd-wrapper .cookStep ol li .stepImg div img {
+  width: 160px;
+  border-radius: 8px;
+}
+.rd-wrapper .messageArea .commentSection {
+  margin-top: 16px;
+}
+.rd-wrapper .messageArea .commentSection .latest_comment {
+  display: flex;
+  padding: 8px;
+}
+.rd-wrapper .messageArea .commentSection .latest_comment .messageProfile img {
+  background-color: grey;
+  opacity: 0.45;
+  border-radius: 9999px;
+  margin-right: 8px;
+}
+.rd-wrapper .messageArea .commentSection .latest_comment .message-board {
+  display: flex;
+  flex-direction: column;
+}
+.rd-wrapper .messageArea .commentSection .latest_comment .message-board a span {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 20px;
+}
+.rd-wrapper .messageArea .commentSection .latest_comment .message-board .comment-time {
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 16px;
+  opacity: 0.45;
+}
+.rd-wrapper .messageArea .commentSection .latest_comment .message-board .comment-body {
+  margin-top: 4px;
+}
+.rd-wrapper .messageArea .commentSection .latest_comment .message-board .comment-body .comment-text {
+  font-size: 14px;
+  letter-spacing: -0.2px;
+  line-height: 20px;
+}
+.rd-wrapper .messageArea .commentSection .messageInputArea {
+  display: flex;
+  padding-top: 16px;
+  align-items: center;
+}
+.rd-wrapper .messageArea .commentSection .messageInputArea .messageItems {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.rd-wrapper .messageArea .commentSection .messageInputArea .messageItems .avatar {
+  display: flex;
+  align-items: center;
+}
+.rd-wrapper .messageArea .commentSection .messageInputArea .messageItems .avatar img {
+  margin-right: 8px;
+  border-radius: 9999px;
+  background-color: grey;
+  opacity: 0.45;
+  width: 32px;
+  height: 32px;
+}
+.rd-wrapper .messageArea .commentSection .messageInputArea .messageItems .inputarea-box {
+  display: table-cell;
+  vertical-align: top;
+  width: 100%;
+  word-break: break-word;
+}
+.rd-wrapper .messageArea .commentSection .messageInputArea .messageItems .inputarea-box .simpleForm {
+  border: 0 solid;
+}
+.rd-wrapper .messageArea .commentSection .messageInputArea .messageItems .inputarea-box .simpleForm .textInput {
+  display: flex;
+  border: 1px solid rgb(206, 206, 205);
+  border-radius: 24px;
+  letter-spacing: -0.2px;
+}
+.rd-wrapper .messageArea .commentSection .messageInputArea .messageItems .inputarea-box .simpleForm .textInput .insert-box {
+  border: 0;
+  outline: 2px solid rgba(0, 0, 0, 0);
+  outline-offset: 2px;
+  margin: 8px 16px;
+  resize: none;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  height: 21px;
+  caret-color: #f93;
+  width: 100%;
+  line-height: 20px;
+  cursor: text;
+}
+.rd-wrapper .messageArea .commentSection .messageInputArea .messageItems .inputarea-box .simpleForm .textInput .send {
+  border: 0;
+  background-color: inherit;
+  padding-right: 15px;
+}
+.rd-wrapper .authorArea .authorBox {
+  margin: 10px 0px;
+  display: flex;
+}
+.rd-wrapper .authorArea .authorBox .dashboard {
+  width: 100%;
+}
+.rd-wrapper .authorArea .authorBox .dashboard .one .dashboard-author {
+  font-size: 14px;
+  font-weight: 600;
+}
+.rd-wrapper .authorArea .authorBox .dashboard .one .dashboard-time {
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 16px;
+  opacity: 0.5;
+}
+.rd-wrapper .authorArea .authorBox .dashboard .two {
+  margin-top: 8px;
+  height: 50px;
+}
+.rd-wrapper .authorArea .authorBox .dashboard .two button {
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 6px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.rd-wrapper .authorArea .authorBox .dashboard .two button:hover {
+  background-color: black;
+  opacity: 0.5;
+}
+.rd-wrapper .author-describe {
+  font-size: 14px;
+  letter-spacing: -0.2px;
+  line-height: 20px;
+  color: #4a4a4a;
+}
+.rd-wrapper .author-describe .describe-area {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.rd-wrapper .authorRecipes .recipes-box {
+  margin-top: 16px;
+  display: flex;
+}
+.rd-wrapper .authorRecipes .recipes-box .moreRecipeLink {
+  margin-right: auto;
+}
+.rd-wrapper .authorRecipes .recipes-box .moreRecipeLink .recipes-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 174px;
+  height: 160px;
+  border: 0;
+  border-radius: 8px;
+}
+.rd-wrapper .authorRecipes .recipes-box .moreRecipeLink .recipes-name {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.2px;
+  color: #4a4a4a;
+}
+.rd-wrapper .authorRecipes .recipes-box a:last-child {
+  margin-right: 0;
+}
+.rd-wrapper .sidebar {
+  width: 336px;
+  height: 395.3px;
+  margin-left: 16px;
+  margin-top: 16px;
+  border-radius: 4px;
+}
+.rd-wrapper .sidebar .sidebar1 .sidebar1-0 {
+  display: flex;
+  cursor: pointer;
+  color: #ff9933;
+  text-align: center;
+  border: 1px solid #ff9933;
+  border-radius: 8px;
+  padding: 7px 14px;
+}
+.rd-wrapper .sidebar .sidebar1 .sidebar1-1 {
+  cursor: pointer;
+  text-align: center;
+  margin-top: 9px;
+  border: 1px solid #cececd;
+  border-radius: 8px;
+  padding: 7px 14px;
+}
+.rd-wrapper .sidebar .sidebar1 .sidebar1-2 {
+  cursor: pointer;
+  text-align: center;
+  margin-top: 9px;
+  border: 1px solid #cececd;
+  border-radius: 8px;
+  padding: 7px 14px;
+}
+
+.moreLink {
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+}
+.moreLink .moreIcon {
+  width: 100%;
+  height: 100%;
+}
+
+.time-member {
+  font-size: 14px;
+  line-height: 20px;
+}
+.time-member li {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 16px;
+}
+.time-member li img {
+  width: 16px;
+  margin-right: 4px;
+}
+
 .footer-wrapper {
-  background-color: rgba(240, 255, 240, 0.6705882353);
-  border-top: solid rgba(74, 74, 74, 0.08);
+  background-color: white;
 }
 .footer-wrapper .footer {
   position: relative;
   top: 0;
   width: 100%;
-  background-color: rgba(240, 255, 240, 0.6705882353);
   width: 1176px;
   margin-top: 40px;
   margin-left: auto;
@@ -615,4 +918,5 @@ ul {
 }
 .footer-wrapper .footer .footer-info {
   text-align: center;
+  padding: 15px 0px;
 }/*# sourceMappingURL=style.css.map */

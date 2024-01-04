@@ -1,0 +1,336 @@
+.rd-wrapper {
+  width: 1176px;
+  display: flex;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-right: auto;
+  margin-left: auto;
+
+  .rd-content {
+    width: 66.6666%;
+    .img {
+      position: relative;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px #0000001a;
+      height: 550px;
+      margin: 16px 0px;
+      overflow: hidden;
+    }
+
+    .recipeImg {
+      width: 100%;
+      height: 100%;
+      max-width: 100%; /* 新增：限制最大寬度為容器寬度 */
+      max-height: 100%; /* 新增：限制最大高度為容器高度 */
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .recipeIntroduction {
+    a {
+      display: flex;
+      cursor: pointer;
+    }
+    .introductionContent {
+      margin-top: 16px;
+    }
+  }
+  .ingredients {
+    .ingredient-list {
+      margin-top: 16px;
+      ol {
+        list-style-type: none;
+        li {
+          padding-top: 8px;
+          padding-bottom: 8px;
+        }
+      }
+    }
+  }
+
+  .cookStep {
+    ol {
+      margin-top: 16px;
+      li {
+        list-style-type: none;
+        margin-bottom: 16px;
+        .stepName {
+          font-weight: 600;
+          font-size: 16px;
+          letter-spacing: 2px;
+          line-height: 24px;
+          margin-bottom: 8px;
+        }
+        .stepContent {
+          margin-bottom: 8px;
+          letter-spacing: 2px;
+          color: "4A4A4A";
+        }
+        .stepImg {
+          display: flex;
+          margin-bottom: 8px;
+          div {
+            width: auto;
+            margin-right: 8px;
+            img {
+              width: 160px;
+              border-radius: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .messageArea {
+    .commentSection {
+      margin-top: 16px;
+
+      .latest_comment {
+        display: flex;
+        padding: 8px;
+
+        .messageProfile {
+          img {
+            background-color: grey;
+            opacity: 0.45;
+            border-radius: 9999px;
+            margin-right: 8px;
+          }
+        }
+
+        .message-board {
+          display: flex;
+          flex-direction: column;
+
+          a {
+            span {
+              font-size: 14px;
+              font-weight: 600;
+              letter-spacing: -0.2px;
+              line-height: 20px;
+            }
+          }
+          .comment-time {
+            font-size: 12px;
+            letter-spacing: 0;
+            line-height: 16px;
+            opacity: 0.45;
+          }
+
+          .comment-body {
+            margin-top: 4px;
+            .comment-text {
+              font-size: 14px;
+              letter-spacing: -0.2px;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+      .messageInputArea {
+        display: flex;
+        padding-top: 16px;
+        align-items: center;
+        .messageItems {
+          display: flex;
+          align-items: center;
+          width: 100%;
+
+          .avatar {
+            display: flex;
+
+            align-items: center;
+
+            img {
+              margin-right: 8px;
+              border-radius: 9999px;
+              background-color: grey;
+              opacity: 0.45;
+              width: 32px;
+              height: 32px;
+            }
+          }
+          .inputarea-box {
+            display: table-cell;
+            vertical-align: top;
+            // width: 10000px;
+            width: 100%;
+            word-break: break-word;
+
+            .simpleForm {
+              border: 0 solid;
+              .textInput {
+                display: flex;
+                border: 1px solid rgb(206 206 205);
+                border-radius: 24px;
+                letter-spacing: -0.2px;
+
+                .insert-box {
+                  border: 0;
+                  outline: 2px solid #0000;
+                  outline-offset: 2px;
+                  margin: 8px 16px;
+                  resize: none;
+                  overflow: hidden;
+                  overflow-wrap: break-word;
+                  height: 21px;
+                  caret-color: #f93;
+                  width: 100%;
+                  line-height: 20px;
+
+                  cursor: text;
+                }
+
+                .send {
+                  border: 0;
+                  background-color: inherit;
+                  padding-right: 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .authorArea {
+    .authorBox {
+      margin: 10px 0px;
+      display: flex;
+
+      .dashboard {
+        width: 100%;
+        .one {
+          .dashboard-author {
+            font-size: 14px;
+            font-weight: 600;
+          }
+          .dashboard-time {
+            font-size: 12px;
+            letter-spacing: 0;
+            line-height: 16px;
+            opacity: 0.5;
+          }
+        }
+        .two {
+          margin-top: 8px;
+          height: 50px;
+          button {
+            padding: 6px 12px;
+            border: 0;
+            border-radius: 6px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+          }
+          button:hover {
+            background-color: black;
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+
+  .author-describe {
+    font-size: 14px;
+    letter-spacing: -0.2px;
+    line-height: 20px;
+    color: #4a4a4a;
+
+    .describe-area {
+      // 目前沒有作用，在思考要用 display:flex 還是 display:-webkit-box;
+      // overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+  }
+
+  .authorRecipes {
+    .recipes-box {
+      margin-top: 16px;
+      display: flex;
+
+      .moreRecipeLink {
+        margin-right: auto;
+
+        .recipes-img {
+          object-fit: cover;
+          width: 174px;
+          height: 160px;
+          border: 0;
+          border-radius: 8px;
+        }
+
+        .recipes-name {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: -0.2px;
+          color: #4a4a4a;
+        }
+      }
+      a:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .sidebar {
+    width: 336px;
+    height: 395.3px;
+    margin-left: 16px;
+    margin-top: 16px;
+    // border: 1px solid black;
+    border-radius: 4px;
+
+    .sidebar1 {
+      .sidebar1-0 {
+        display: flex;
+        cursor: pointer;
+        color: #ff9933;
+        text-align: center;
+        border: 1px solid #ff9933;
+        border-radius: 8px;
+        padding: 7px 14px;
+      }
+      .sidebar1-1 {
+        cursor: pointer;
+
+        text-align: center;
+        margin-top: 9px;
+        border: 1px solid #cececd;
+        border-radius: 8px;
+
+        padding: 7px 14px;
+      }
+      .sidebar1-2 {
+        cursor: pointer;
+
+        text-align: center;
+        margin-top: 9px;
+        border: 1px solid #cececd;
+        border-radius: 8px;
+
+        padding: 7px 14px;
+      }
+    }
+  }
+}
+
+.moreLink {
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  .moreIcon {
+    width: 100%;
+    height: 100%;
+  }
+}

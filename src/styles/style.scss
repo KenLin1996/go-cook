@@ -8,6 +8,8 @@ body {
   font-family: "Roboto", sans-serif;
   // background-color: #e1dad1;
   background-color: white;
+  background-color: #f8f6f2;
+
   font-weight: 400;
   color: #3f3e3e;
 }
@@ -31,4 +33,7 @@ ul {
 @import "./carousel";
 @import "./categories";
 @import "./SearchResult";
+@import "./recipeDetail";
+@import "./timeAndMember";
+
 @import "./footer";

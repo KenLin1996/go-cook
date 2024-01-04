@@ -1,0 +1,13 @@
+.time-member {
+  font-size: 14px;
+  line-height: 20px;
+  li {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 16px;
+    img {
+      width: 16px;
+      margin-right: 4px;
+    }
+  }
+}
