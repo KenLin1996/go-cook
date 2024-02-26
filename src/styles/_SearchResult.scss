@@ -220,10 +220,10 @@
         }
       }
       .picture-wrapper {
-        height: 176px;
         img {
           width: 128px;
           height: 100%;
+          object-fit: cover;
         }
       }
     }

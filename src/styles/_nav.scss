@@ -26,44 +26,63 @@
     }
   }
 }
-.layout-nav-member {
-  // margin: 5px;
-
+.layout-nav-status {
   .logIn {
+    cursor: pointer;
+
     margin-right: 15px;
-    padding: 3.5px 4px;
-    border-radius: 10px;
+    padding: 4px 10px;
+    border: 1px solid #febc58;
+    border-radius: 5px;
 
-    // background-color: #ffd1b5;
-    // background-color: #ffccadeb;
-    background-color: rgb(255 239 173 / 78%);
-
+    background-color: inherit;
     font-size: 18px;
     font-weight: bold;
-    -webkit-text-stroke: 1px #804d00;
-    -webkit-text-fill-color: #febc58;
+    color: #febc58;
 
     transition: 0.1s;
   }
-  .logIn:hover {
-    border: 3px solid rgb(246, 202, 120);
+  // .logIn:focus {
+  //   box-shadow: 0 0 0 0.2rem rgba(254, 188, 87, 0.25);
+  // }
+  .logIn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(254, 188, 87, 0.25);
   }
+
+  // .signUp {
+  //   margin: 0px 5px;
+
+  //   padding: 3.5px 4px;
+  //   border-radius: 10px;
+
+  //   background-color: rgb(255 239 173 / 78%);
+
+  //   font-size: 18px;
+  //   font-weight: bold;
+  //   -webkit-text-stroke: 1px #804d00;
+  //   -webkit-text-fill-color: #febc58;
+
+  //   transition: 0.1s;
+  // }
+  // .signUp:hover {
+  //   border: 1px solid rgb(246, 202, 120);
+  //   left: 2px;
+  // }
+
   .signUp {
-    padding: 3.5px 4px;
-    border-radius: 10px;
+    cursor: pointer;
+    padding: 4px 10px;
+    border: 1px solid #febc58;
+    border-radius: 5px;
 
-    // background-color: #ffd1b5;
-    // background-color: #ffccadeb;
-    background-color: rgb(255 239 173 / 78%);
-
+    background-color: inherit;
     font-size: 18px;
     font-weight: bold;
-    -webkit-text-stroke: 1px #804d00;
-    -webkit-text-fill-color: #febc58;
+    color: #febc58;
 
     transition: 0.1s;
   }
-  .signUp:hover {
-    border: 3px solid rgb(246, 202, 120);
+  .signUp:focus {
+    box-shadow: 0 0 0 0.2rem rgba(254, 188, 87, 0.25);
   }
 }

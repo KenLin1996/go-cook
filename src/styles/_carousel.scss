@@ -1,4 +1,4 @@
-/* 輪播容器 */
+// /* 輪播容器 */
 .slick-list {
   position: relative;
   height: 85%;
@@ -66,17 +66,18 @@
 /* 左右切換按鈕的容器 */
 .shift {
   .btn {
+    cursor: pointer;
     position: absolute;
     top: 94px;
-    margin: auto 0;
     width: 32px;
     height: 32px;
-    border-radius: 50%;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    // cursor: pointer;
-    user-select: none;
+    // margin: auto 0;
+
+    // border-radius: 50%;
+    // color: white;
+    // font-weight: bold;
+    // text-align: center;
+    // user-select: none;
   }
 
   /* 左切換按鈕 */
@@ -88,4 +89,13 @@
   .btn:last-child {
     right: 0;
   }
+}
+.slick-slider {
+  display: flex;
+  transition: transform 0.5s ease; /* 添加過渡效果 */
+}
+
+.slick-slide {
+  width: 100%;
+  flex: 0 0 auto;
 }

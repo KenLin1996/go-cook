@@ -23,6 +23,20 @@ ul {
   list-style-type: none;
 }
 
+.main {
+  width: 1176px;
+  display: flex;
+  justify-content: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.wrapper {
+  background-color: #f8f6f2;
+}
+
 .layout-nav {
   display: flex;
   padding: 0px 150px;
@@ -47,32 +61,120 @@ ul {
   border-radius: 0px;
 }
 
-.layout-nav-member .logIn {
+.layout-nav-status .logIn {
+  cursor: pointer;
   margin-right: 15px;
-  padding: 3.5px 4px;
-  border-radius: 10px;
-  background-color: rgba(255, 239, 173, 0.78);
+  padding: 4px 10px;
+  border: 1px solid #febc58;
+  border-radius: 5px;
+  background-color: inherit;
   font-size: 18px;
   font-weight: bold;
-  -webkit-text-stroke: 1px #804d00;
-  -webkit-text-fill-color: #febc58;
+  color: #febc58;
   transition: 0.1s;
 }
-.layout-nav-member .logIn:hover {
-  border: 3px solid rgb(246, 202, 120);
+.layout-nav-status .logIn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(254, 188, 87, 0.25);
 }
-.layout-nav-member .signUp {
-  padding: 3.5px 4px;
-  border-radius: 10px;
-  background-color: rgba(255, 239, 173, 0.78);
+.layout-nav-status .signUp {
+  cursor: pointer;
+  padding: 4px 10px;
+  border: 1px solid #febc58;
+  border-radius: 5px;
+  background-color: inherit;
   font-size: 18px;
   font-weight: bold;
-  -webkit-text-stroke: 1px #804d00;
-  -webkit-text-fill-color: #febc58;
+  color: #febc58;
   transition: 0.1s;
 }
-.layout-nav-member .signUp:hover {
-  border: 3px solid rgb(246, 202, 120);
+.layout-nav-status .signUp:focus {
+  box-shadow: 0 0 0 0.2rem rgba(254, 188, 87, 0.25);
+}
+
+.logInPage {
+  width: 500px;
+  height: 620px;
+  margin-top: 40px;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0px 0px 6px 1px #e5e5e5;
+}
+.logInPage .logInTitle {
+  display: flex;
+  margin: 20px 0px;
+  justify-content: center;
+}
+
+.outerWrapper {
+  margin: 30px 0;
+  padding: 0 100px;
+}
+
+.otherDevices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.otherDevices button {
+  margin-bottom: 10px;
+}
+
+.logInForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.logInForm input {
+  border-radius: 6px;
+  padding: 6px 12px;
+  outline: 0;
+  width: 100%;
+  line-height: 30px;
+  font-size: 20px;
+}
+.logInForm .emailInput {
+  border: 1px solid #cececd;
+}
+.logInForm .emailInput:focus {
+  border-color: #febc57;
+  box-shadow: 0 0 0 3.2px rgba(254, 188, 87, 0.35);
+}
+.logInForm .accountName {
+  margin-top: 10px;
+  border: 1px solid #cececd;
+}
+
+.inputWrapper {
+  display: flex;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: 1px solid #cececd;
+  width: 100%;
+}
+.inputWrapper input {
+  border: 0px solid #cececd;
+  padding: 6px 12px;
+  width: 100%;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+.forgetPassword {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.forgetPassword a {
+  color: #febc57;
+  text-decoration: underline;
+}
+
+.checkAccount {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
 }
 
 .header {
@@ -134,7 +236,7 @@ ul {
   font-size: 18px;
   border: 0;
   text-align: left;
-  padding-left: 12px;
+  padding: 0px 12px;
 }
 .NewSearch #search-widget .search-box .search-submit {
   border: 0;
@@ -217,6 +319,7 @@ ul {
 .recipe-card-content .card-content-link .card-content-image {
   display: block;
   overflow: hidden;
+  margin-bottom: 12px;
   position: relative;
   height: 131.5px;
   width: 177.5px;
@@ -245,30 +348,17 @@ ul {
   margin-right: 0px;
 }
 
-.main {
-  width: 1176px;
-  display: flex;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.wrapper {
-  background-color: #f8f6f2;
-}
-
 .activity_info {
   position: relative;
   width: 336px;
   height: 395.3px;
   margin: 0px 0px 16px 58px;
-  border: 1px solid black;
+  border: 1px solid #e5e5e5;
   border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1019607843);
   padding: 16px;
 }
 
-/* 輪播容器 */
 .slick-list {
   position: relative;
   height: 85%;
@@ -339,24 +429,27 @@ ul {
   /* 右切換按鈕 */
 }
 .shift .btn {
+  cursor: pointer;
   position: absolute;
   top: 94px;
-  margin: auto 0;
   width: 32px;
   height: 32px;
-  border-radius: 50%;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
 }
 .shift .btn:first-child {
   left: 0;
 }
 .shift .btn:last-child {
   right: 0;
+}
+
+.slick-slider {
+  display: flex;
+  transition: transform 0.5s ease; /* 添加過渡效果 */
+}
+
+.slick-slide {
+  width: 100%;
+  flex: 0 0 auto;
 }
 
 .content-wrapper {
@@ -374,7 +467,7 @@ ul {
   width: 100%;
 }
 .categories .categories-list {
-  margin-bottom: 20px;
+  margin-top: 40px;
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.168627451);
   border-radius: 14px;
@@ -387,7 +480,7 @@ ul {
   margin: 0 0 8px;
   padding: 8px 16px 0px;
   color: #564e4a;
-  font-size: 1.6rem;
+  font-size: 20px;
 }
 .categories .categories-all-parents .categories-all-children {
   display: flex;
@@ -395,7 +488,7 @@ ul {
   padding: 10px 0 6px;
   margin: 0px 16px 12px 16px;
   border-radius: 6px;
-  background-color: lavenderblush;
+  background-color: #f8f6f1;
   justify-content: flex-start;
 }
 .categories .categories-all-parents .categories-all-children .categories-all-child {
@@ -587,12 +680,11 @@ ul {
   width: 100%;
   height: 100%;
 }
-.content-wrapper .content-left .result-li .picture-wrapper {
-  height: 176px;
-}
 .content-wrapper .content-left .result-li .picture-wrapper img {
   width: 128px;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .rd-wrapper {
@@ -787,7 +879,7 @@ ul {
   margin-top: 8px;
   height: 50px;
 }
-.rd-wrapper .authorArea .authorBox .dashboard .two button {
+.rd-wrapper .authorArea .authorBox .dashboard .two .followButton {
   padding: 6px 12px;
   border: 0;
   border-radius: 6px;
@@ -795,7 +887,7 @@ ul {
   color: white;
   cursor: pointer;
 }
-.rd-wrapper .authorArea .authorBox .dashboard .two button:hover {
+.rd-wrapper .authorArea .authorBox .dashboard .two :hover {
   background-color: black;
   opacity: 0.5;
 }
@@ -836,6 +928,8 @@ ul {
   margin-right: 0;
 }
 .rd-wrapper .sidebar {
+  position: sticky;
+  top: 16px;
   width: 336px;
   height: 395.3px;
   margin-left: 16px;
@@ -850,6 +944,18 @@ ul {
   border: 1px solid #ff9933;
   border-radius: 8px;
   padding: 7px 14px;
+  justify-content: center;
+  align-items: center;
+}
+.rd-wrapper .sidebar .sidebar1 .sidebar1-0 img {
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+}
+.rd-wrapper .sidebar .sidebar1 .sidebar1-0 h2 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
 }
 .rd-wrapper .sidebar .sidebar1 .sidebar1-1 {
   cursor: pointer;
@@ -859,6 +965,12 @@ ul {
   border-radius: 8px;
   padding: 7px 14px;
 }
+.rd-wrapper .sidebar .sidebar1 .sidebar1-1 h2 {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  color: #606060;
+}
 .rd-wrapper .sidebar .sidebar1 .sidebar1-2 {
   cursor: pointer;
   text-align: center;
@@ -866,6 +978,12 @@ ul {
   border: 1px solid #cececd;
   border-radius: 8px;
   padding: 7px 14px;
+}
+.rd-wrapper .sidebar .sidebar1 .sidebar1-2 h2 {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  color: #606060;
 }
 
 .moreLink {

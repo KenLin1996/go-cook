@@ -24,12 +24,26 @@ ul {
   list-style-type: none;
 }
 
+.main {
+  width: 1176px;
+  display: flex;
+  justify-content: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.wrapper {
+  background-color: #f8f6f2;
+}
+
 @import "./nav";
+@import "./status";
 @import "./header";
 @import "./search";
 @import "./recipeCard";
 @import "./homepage";
-@import "./aside";
 @import "./carousel";
 @import "./categories";
 @import "./SearchResult";

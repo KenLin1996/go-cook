@@ -1,40 +1,48 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import IngredientFilter from "../components/IngredientFilter";
-import noodle from "../picture/noodle.jpg";
 import RelatedSearches from "../components/RelatedSearches";
 import clock from "../picture/icons8-time.png";
-import member from "../picture/icons8-member.png";
 import AuthorName from "../components/AuthorName";
 import TimeAndMember from "../components/TimeAndMember";
 import recipes from "../recipes";
+import categories from "../categories";
 
 const SearchResult = () => {
-  const [filteredRecipes, setFilteredRecipes] = useState(recipes);
+  const { id } = useParams();
 
-  function ResultLi({
-    picture,
-    title,
-    ingredients,
-    time,
-    servings,
-    author,
-    headshot,
-  }) {
+  const selectedRecipe = recipes.filter((recipe) => recipe.category === id);
+
+  //
+  const categoryName = categories.reduce((acc, category) => {
+    const subcategory = category.subcategories.find(
+      (sub) => sub.id.toString() === id
+    );
+    if (subcategory) {
+      return subcategory.name;
+    }
+    return acc;
+  }, "");
+
+  const numberOfRecipes = selectedRecipe.length;
+  const [filteredRecipes, setFilteredRecipes] = useState(selectedRecipe);
+
+  function ResultLi({ recipe }) {
     return (
       <>
-        <Link to="/RecipeDetail" className="result-li">
+        {/* <Link to="/recipe-detail" className="result-li"> */}
+        <Link to={`/detail/${recipe.id}`} className="result-li">
           <div className="picture-wrapper">
-            <img src={picture} alt="食物圖片" />
+            <img src={recipe.picture} alt="食物圖片" />
           </div>
           <div className="li-describe">
             <div className="describe-title">
-              <h2>{title}</h2>
+              <h2>{recipe.title}</h2>
             </div>
             <div className="ingredients-wrappeer">
               <div className="ingredients-list">
                 <div>
-                  {ingredients.map((ingredient, index) => (
+                  {recipe.ingredients.map((ingredient, index) => (
                     <span key={index} style={{ marginRight: "3px" }}>
                       {ingredient}
                     </span>
@@ -44,12 +52,17 @@ const SearchResult = () => {
             </div>
             <TimeAndMember
               clock={clock}
-              time={time}
-              member={member}
-              servings={servings}
+              time={recipe.time}
+              member={recipe.member}
+              servings={recipe.servings}
             />
 
-            <AuthorName headshot={headshot} author={author} />
+            <AuthorName
+              headshot={recipe.headshot}
+              author={recipe.author}
+              headshotWidth="24px"
+              headshotHeight="24px"
+            />
           </div>
         </Link>
       </>
@@ -66,7 +79,8 @@ const SearchResult = () => {
         <header>
           <div className="">
             <h1>
-              <span>(94034)</span> 種 <span>雞胸肉</span> 的家常做法食譜
+              <span>{numberOfRecipes}</span> 種 <span>{categoryName}</span>{" "}
+              的家常做法食譜
             </h1>
           </div>
         </header>
@@ -74,17 +88,8 @@ const SearchResult = () => {
           <div className="content-left">
             <div className="search-result-wrapper">
               <ul className="result-ul">
-                {filteredRecipes.map((recipe, index) => (
-                  <ResultLi
-                    key={index}
-                    picture={recipe.picture}
-                    title={recipe.title}
-                    ingredients={recipe.ingredients}
-                    time={recipe.time}
-                    servings={recipe.servings}
-                    author={recipe.author}
-                    headshot={recipe.headshot}
-                  />
+                {filteredRecipes.map((recipe) => (
+                  <ResultLi key={recipe.id} recipe={recipe} />
                 ))}
               </ul>
             </div>

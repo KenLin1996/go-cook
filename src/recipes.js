@@ -1,4 +1,3 @@
-import React from "react";
 import gojyo from "./picture/gojyo.jpeg";
 import geto from "./picture/geto.jpeg";
 import kid from "./picture/kid.jpeg";
@@ -6,7 +5,9 @@ import director from "./picture/director.png";
 
 const recipes = [
   {
+    id: "111",
     title: "清炒高麗菜",
+    category: "17",
     picture:
       "https://img-global.cpcdn.com/recipes/ab6f71303b661abf/1360x964cq70/%E6%B8%85%E7%82%92%E9%AB%98%E9%BA%97%E8%8F%9C-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.webp",
 
@@ -30,7 +31,9 @@ const recipes = [
     ],
   },
   {
+    id: "222",
     title: "高麗菜捲",
+    category: "17",
     picture:
       "https://img-global.cpcdn.com/recipes/a772124ca805a06c/1360x964cq70/%E9%AB%98%E9%BA%97%E8%8F%9C%E6%8D%B2-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.webp",
 
@@ -78,7 +81,9 @@ const recipes = [
   },
   {
     // 範例連結: https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/17161024-%E9%86%9C%E8%B1%86%E7%82%92%E9%9B%9E%E8%83%B8?ref=search&search_term=%E9%9B%9E%E8%83%B8%E8%82%89
-    title: "醜豆炒雞胸",
+    id: "333",
+    title: "醜豆炒雞胸肉",
+    category: "21",
     picture:
       "https://img-global.cpcdn.com/recipes/fef9ed9d53dd0e3f/1360x964cq70/%E9%86%9C%E8%B1%86%E7%82%92%E9%9B%9E%E8%83%B8-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.webp",
     ingredients: [
@@ -130,7 +135,9 @@ const recipes = [
   },
   {
     // 範例連結: https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/15224727-%E8%92%9C%E5%91%B3%E9%9B%9E%E8%83%B8%E8%82%89?ref=search&search_term=%E9%9B%9E%E8%83%B8%E8%82%89
+    id: "444",
     title: "蒜味雞胸肉",
+    category: "21",
     picture:
       "https://img-global.cpcdn.com/recipes/17af24581d8d0604/1360x964cq70/%E8%92%9C%E5%91%B3%E9%9B%9E%E8%83%B8%E8%82%89-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.webp",
     ingredients: ["雞肉胸肉 3 片", "蒜蓉 3 大匙", "鹽 2 大匙", "橄欖油 1 大匙"],

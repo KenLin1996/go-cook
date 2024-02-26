@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import WordBox from "../components/WordBox";
 import AuthorName from "../components/AuthorName";
 import TimeAndMember from "../components/TimeAndMember";
@@ -14,6 +14,7 @@ import recipesImg2 from "../picture/recipes-img-2.webp";
 import recipesImg3 from "../picture/recipes-img-3.webp";
 import recipesImg4 from "../picture/recipes-img-4.webp";
 import bookMark from "../picture/bookMark .png";
+import bookMarkCheck from "../picture/bookMarkCheck.png";
 
 export function Wrap({ title, icon, showMoreLink, moreLinkPath }) {
   const wrapStyle = {
@@ -52,16 +53,26 @@ export function Wrap({ title, icon, showMoreLink, moreLinkPath }) {
 }
 
 const RecipeDetail = () => {
-  const specificAuthor = "五條悟";
+  const { id } = useParams();
 
+  const selectedRecipe = recipes.find((recipe) => recipe.id === id);
+  console.log(selectedRecipe);
+
+  console.log(id);
+
+  // textInput icon & color change
   const [textAreaFocused, setTextAreaFocused] = useState(false);
-
   const handleTextAreaFocus = () => {
     setTextAreaFocused(true);
   };
-
   const handleTextAreaBlur = () => {
     setTextAreaFocused(false);
+  };
+
+  // collection icon & color change
+  const [isBookmarked, setIsBookmarked] = useState(false);
+  const handleBookmarkClick = () => {
+    setIsBookmarked((prevIsBookmarked) => !prevIsBookmarked);
   };
 
   return (
@@ -69,26 +80,21 @@ const RecipeDetail = () => {
       <div className="rd-content">
         <div className="left">
           <div className="img">
-            <img className="recipeImg" src={recipes[0].picture} />
+            <img className="recipeImg" src={selectedRecipe.picture} />
           </div>
           <WordBox>
             <div className="recipeName">
-              <h1>{recipes[0].title}</h1>
+              <h1>{selectedRecipe.title}</h1>
             </div>
           </WordBox>
           <WordBox>
             <div className="recipeIntroduction">
-              {recipes?.map(
-                (recipe, index) =>
-                  recipe.author === specificAuthor && (
-                    <a className="recipeAuthor" key={index}>
-                      <AuthorName
-                        headshot={recipe.headshot}
-                        author={recipe.author}
-                      />
-                    </a>
-                  )
-              )}
+              <a className="recipeAuthor">
+                <AuthorName
+                  headshot={selectedRecipe.headshot}
+                  author={selectedRecipe.author}
+                />
+              </a>
 
               <div className="introductionContent">
                 <div className="content">
@@ -102,25 +108,27 @@ const RecipeDetail = () => {
               <Wrap title={"預備食材"} />
               <div style={{ marginTop: "16px" }}>
                 <TimeAndMember
-                  time={recipes[0].time}
-                  servings={recipes[0].servings}
+                  time={selectedRecipe.time}
+                  servings={selectedRecipe.servings}
                 />
               </div>
               <div className="ingredient-list">
                 <ol>
-                  {recipes[0].ingredients.map((ingredient, index, array) => (
-                    <li
-                      key={index}
-                      style={{
-                        borderBottom:
-                          index === array.length - 1
-                            ? "none"
-                            : "1px dashed rgb(236 235 233)",
-                      }}
-                    >
-                      {ingredient}
-                    </li>
-                  ))}
+                  {selectedRecipe.ingredients.map(
+                    (ingredient, index, array) => (
+                      <li
+                        key={index}
+                        style={{
+                          borderBottom:
+                            index === array.length - 1
+                              ? "none"
+                              : "1px dashed rgb(236 235 233)",
+                        }}
+                      >
+                        {ingredient}
+                      </li>
+                    )
+                  )}
                 </ol>
               </div>
             </div>
@@ -130,25 +138,21 @@ const RecipeDetail = () => {
             <div className="cookStep">
               <Wrap title={"料理步驟"} />
               <ol>
-                {recipes
-                  .filter((recipe) => recipe.title === "醜豆炒雞胸")
-                  .map((recipe) =>
-                    recipe.steps.map((step) => (
-                      <li>
-                        <div className="stepName">{step.name}</div>
-                        <div className="stepContent">
-                          <p>{step.content}</p>
+                {selectedRecipe.steps.map((step) => (
+                  <li>
+                    <div className="stepName">{step.name}</div>
+                    <div className="stepContent">
+                      <p>{step.content}</p>
+                    </div>
+                    <div className="stepImg">
+                      {step.images.map((image) => (
+                        <div>
+                          <img src={image}></img>
                         </div>
-                        <div className="stepImg">
-                          {step.images.map((image) => (
-                            <div>
-                              <img src={image}></img>
-                            </div>
-                          ))}
-                        </div>
-                      </li>
-                    ))
-                  )}
+                      ))}
+                    </div>
+                  </li>
+                ))}
               </ol>
             </div>
           </WordBox>
@@ -211,7 +215,7 @@ const RecipeDetail = () => {
             <Wrap title={"食譜作者"} />
             <div className="authorBox">
               <AuthorName
-                headshot={recipes[0].headshot}
+                headshot={selectedRecipe.headshot}
                 headshotWidth="96px"
                 headshotHeight="96px"
               />
@@ -219,11 +223,13 @@ const RecipeDetail = () => {
               <div className="dashboard">
                 <div>
                   <div className="one">
-                    <div className="dashboard-author">{recipes[0].author}</div>
+                    <div className="dashboard-author">
+                      {selectedRecipe.author}
+                    </div>
                     <div className="dashboard-time">發布於 2023年12月29日</div>
                   </div>
                   <div className="two">
-                    <button>點擊追蹤</button>
+                    <button className="followButton">點擊追蹤</button>
                   </div>
                 </div>
               </div>
@@ -269,12 +275,16 @@ const RecipeDetail = () => {
       <div className="sidebar">
         <WordBox style={{ border: "1px solid black" }}>
           <div className="sidebar1">
-            <div className="sidebar1-0">
-              <img src={bookMark} />
-              <h2>收藏食譜</h2>
+            <div className="sidebar1-0" onClick={handleBookmarkClick}>
+              <img src={isBookmarked ? bookMarkCheck : bookMark} />
+              <h2>{isBookmarked ? "已收藏" : "收藏食譜"}</h2>
             </div>
-            <div className="sidebar1-1">分享</div>
-            <div className="sidebar1-2">列印</div>
+            <div className="sidebar1-1">
+              <h2>分享</h2>
+            </div>
+            <div className="sidebar1-2">
+              <h2>列印</h2>
+            </div>
           </div>
         </WordBox>
       </div>

@@ -7,14 +7,15 @@
 //   margin-left: auto;
 // }
 
-.main {
-  width: 1176px;
-  display: flex;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-right: auto;
-  margin-left: auto;
-}
-.wrapper {
-  background-color: #f8f6f2;
+
+.activity_info {
+  position: relative;
+  width: 336px;
+  height: 395.3px;
+  margin: 0px 0px 16px 58px;
+  border: 1px solid #e5e5e5;
+
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1019607843);
+  padding: 16px;
 }

@@ -1,7 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NavBar = ({ isSearchable }) => {
+  const navigate = useNavigate();
+
+  const handleClickLogin = () => {
+    navigate("/log-in");
+  };
+
+  const handleClickSignUp = () => {
+    navigate("/sign-up");
+  };
+
   return (
     <div>
       <nav className="layout-nav">
@@ -11,13 +21,13 @@ const NavBar = ({ isSearchable }) => {
           </Link>
         </div>
         {isSearchable && (
-          <div className="layout-nav-member">
-            <Link to="/logIn" className="logIn">
-              Log In
-            </Link>
-            <Link to="/signUp" className="signUp">
-              Sign Up
-            </Link>
+          <div className="layout-nav-status">
+            <button onClick={handleClickLogin} className="logIn">
+              登入
+            </button>
+            <button onClick={handleClickSignUp} className="signUp">
+              註冊
+            </button>
           </div>
         )}
       </nav>

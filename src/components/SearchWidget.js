@@ -5,7 +5,7 @@ const SearchWidget = () => {
   return (
     <form id="search-widget">
       <div className="search-box">
-        <button type="submit" className="search-button">
+        <button type="button" className="search-button">
           <img src={magnifier} className="search-icon" />
         </button>
         <input

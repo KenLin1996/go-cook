@@ -221,7 +221,7 @@
         .two {
           margin-top: 8px;
           height: 50px;
-          button {
+          .followButton {
             padding: 6px 12px;
             border: 0;
             border-radius: 6px;
@@ -229,7 +229,7 @@
             color: white;
             cursor: pointer;
           }
-          button:hover {
+          :hover {
             background-color: black;
             opacity: 0.5;
           }
@@ -284,6 +284,9 @@
   }
 
   .sidebar {
+    position: sticky;
+    top: 16px;
+
     width: 336px;
     height: 395.3px;
     margin-left: 16px;
@@ -300,6 +303,18 @@
         border: 1px solid #ff9933;
         border-radius: 8px;
         padding: 7px 14px;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 20px;
+          height: 20px;
+          margin-right: 4px;
+        }
+        h2 {
+          font-size: 18px;
+          font-weight: 600;
+          letter-spacing: -0.2px;
+        }
       }
       .sidebar1-1 {
         cursor: pointer;
@@ -310,6 +325,13 @@
         border-radius: 8px;
 
         padding: 7px 14px;
+
+        h2 {
+          font-size: 18px;
+          font-weight: 400;
+          letter-spacing: -0.2px;
+          color: #606060;
+        }
       }
       .sidebar1-2 {
         cursor: pointer;
@@ -320,6 +342,13 @@
         border-radius: 8px;
 
         padding: 7px 14px;
+
+        h2 {
+          font-size: 18px;
+          font-weight: 400;
+          letter-spacing: -0.2px;
+          color: #606060;
+        }
       }
     }
   }

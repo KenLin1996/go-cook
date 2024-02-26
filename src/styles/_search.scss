@@ -1,60 +1,3 @@
-// Search.js 版本
-// .search {
-//   display: flex;
-//   width: 1176px;
-
-//   justify-content: space-between;
-//   margin-top: 16px;
-//   margin-bottom: 20px;
-
-//   margin-left: auto;
-//   margin-right: auto;
-//   // padding: 0rem 6rem;
-//   height: 44px;
-//   .search-left {
-//     display: flex;
-//     padding: 0px 16px;
-//   }
-//   .search-select {
-//     width: 100px;
-//     border-radius: 8px 0 0 8px;
-//   }
-//   input {
-//     width: 500px;
-//     border-top: 1px solid gray;
-//     border-bottom: 1px solid gray;
-//     border-left: 0;
-//     border-right: 0;
-//   }
-//   outline: none;
-// }
-// .search-button {
-//   border-radius: 0 8px 8px 0;
-//   border: 1px solid gray;
-//   cursor: pointer;
-// }
-// .search {
-//   &-recipt-add {
-//     display: flex;
-//     justify-content: flex-end;
-//     width: 33.3%;
-//     padding-left: 80px;
-//     padding-right: 16px;
-//     // margin: 0px 0px 0px 300px;
-
-//     a {
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//       width: 100%;
-//       margin-left: 8px;
-//       background-color: #fff;
-//       border: 1px solid gray;
-//       border-radius: 5px;
-//     }
-//   }
-// }
-
 // NewSearch.js 版本
 .NewSearch {
   // max-width: 512px;
@@ -98,7 +41,8 @@
         font-size: 18px;
         border: 0;
         text-align: left;
-        padding-left: 12px;
+        // padding-left: 12px;
+        padding: 0px 12px;
       }
       .search-submit {
         border: 0;

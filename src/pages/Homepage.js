@@ -1,12 +1,15 @@
 import React from "react";
 
 import NewSearch from "../components/NewSearch";
+import CardHeader from "../components/CardHeader";
+import Carousel from "../components/Carousel";
+
+// import recipes from "../recipes"
 
 import DumplingImg from "/Users/ken/Desktop/go-cook-project/src/picture/dumpling.jpg";
 import NoodleImg from "/Users/ken/Desktop/go-cook-project/src/picture/noodle.jpg";
 import RiceImg from "/Users/ken/Desktop/go-cook-project/src/picture/rice.jpg";
 import RecipeCard from "../components/RecipeCard";
-import Aside from "../components/Aside";
 
 const Homepage = () => {
   const recipes1 = [
@@ -15,18 +18,14 @@ const Homepage = () => {
     { name: "美味飯飯", author: "Peter", image: RiceImg },
     { name: "美味飯飯", author: "John", image: RiceImg },
   ];
-
-  // const recipes2 = [
-  //   { name: "食物4", image: "url4" },
-  //   { name: "食物5", image: "url5" },
-  //   { name: "食物6", image: "url6" },
-  // ];
-
-  // const recipes3 = [
-  //   { name: "食物7", image: "url7" },
-  //   { name: "食物8", image: "url8" },
-  //   { name: "食物9", image: "url9" },
-  // ];
+  const slides = [
+    { imgSrc: NoodleImg, text: "30天 烹飪日記，每日的努力是未來健康的基礎～" },
+    {
+      imgSrc: DumplingImg,
+      text: "30天烹飪日記，每日的努力是未來健康的基礎～",
+    },
+    { imgSrc: RiceImg, text: "每日的努力是未來健康的基礎～" },
+  ];
 
   return (
     <div>
@@ -41,7 +40,10 @@ const Homepage = () => {
           <RecipeCard title="今日熱門" recipes={recipes1} />
         </section>
         <aside className="homepageAside">
-          <Aside />
+          <section className="activity_info">
+            <CardHeader title="活動" />
+            <Carousel slides={slides} />
+          </section>
         </aside>
       </main>
     </div>

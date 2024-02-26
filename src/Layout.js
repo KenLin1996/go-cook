@@ -45,16 +45,38 @@ import Footer from "./components/Footer";
 const Layout = ({ isSearchable, children }) => {
   const location = useLocation();
 
-  // 檢查當前的 route 是否是 RecipeDetail
-  const isRecipeDetail = location.pathname.includes("RecipeDetail");
+  // 定義要顯示 Footer 的條件
+  const hideFooterConditions = [
+    location.pathname.includes("detail"),
+    location.pathname.includes("log-in"),
+    location.pathname.includes("sign-up"),
+  ];
+  // 檢查是否要顯示 Footer
+  const shouldShowFooter = !hideFooterConditions.some((condition) => condition);
 
   return (
     <div className="wrapper">
-      <NavBar isSearchable={isSearchable} />
+      <NavBar isSearchable={!isSearchable} />
       {children}
-      {!isRecipeDetail && <Footer />}
+      {shouldShowFooter && <Footer />}
     </div>
   );
 };
 
 export default Layout;
+
+
+// 檢查當前的 route 是否是 RecipeDetail
+// const isRecipeDetail = location.pathname.includes("RecipeDetail");
+// const isRecipeDetail = location.pathname.includes("detail");
+
+// return (
+//   <div className="wrapper">
+//     <NavBar isSearchable={!isSearchable} />
+//     {children}
+//     {!isRecipeDetail && <Footer />}
+//   </div>
+// );
+// };
+
+// export default Layout;

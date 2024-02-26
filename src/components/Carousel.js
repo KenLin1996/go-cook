@@ -1,80 +1,91 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import NoodleImg from "/Users/ken/Desktop/go-cook-project/src/picture/noodle.jpg";
-import DumplingImg from "/Users/ken/Desktop/go-cook-project/src/picture/dumpling.jpg";
-import RiceImg from "/Users/ken/Desktop/go-cook-project/src/picture/rice.jpg";
 
-function Carousel() {
+import leftArrow from "../picture/icons8-leftArrow.png";
+import rightArrow from "../picture/icons8-rightArrow.png";
+
+const Carousel = ({ slides }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [
-    { imgSrc: NoodleImg, text: "30天 烹飪日記，每日的努力是未來健康的基礎～" },
-    {
-      imgSrc: DumplingImg,
-      text: "30天烹飪日記，每日的努力是未來健康的基礎～",
-    },
-    { imgSrc: RiceImg, text: "每日的努力是未來健康的基礎～" },
-  ];
-
-  const handlePrev = () => {
-    setCurrentSlide((prevSlide) =>
-      prevSlide === 0 ? slides.length - 1 : prevSlide - 1
-    );
-  };
-
-  const handleNext = () => {
-    setCurrentSlide((prevSlide) =>
-      prevSlide === slides.length - 1 ? 0 : prevSlide + 1
-    );
-  };
-
+  const [isHovered, setIsHovered] = useState(false);
+  const [isPaused, setIsPaused] = useState(false); // 新增的狀態
   const sliderRef = useRef(null);
+
+  const handleSlideChange = (newIndex) => {
+    setCurrentSlide(
+      (prevSlide) => (prevSlide + newIndex + slides.length) % slides.length
+    );
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    setIsPaused(true); // 暫停輪播
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setIsPaused(false); // 恢復輪播
+  };
+
+  const handleButtonClick = (newIndex) => {
+    handleSlideChange(newIndex);
+    setIsPaused(true); // 在按鈕點擊時暫停輪播
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      handleNext();
+      if (!isPaused) {
+        handleSlideChange(1);
+      }
     }, 3000);
 
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [isPaused, currentSlide]);
 
   useEffect(() => {
-    if (sliderRef.current) {
+    if (sliderRef.current && !isHovered) {
       sliderRef.current.style.transform = `translateX(-${currentSlide * 100}%)`;
+      // setIsPaused(false); // 在這裡恢復輪播，確保在 handleSlideChange 之後
     }
-  }, [currentSlide]);
+  }, [currentSlide, isHovered]);
 
   return (
     <div className="slick-list">
       <div className="slick-slider" ref={sliderRef}>
         {slides.map((slide, index) => (
           <div className="slick-slide" key={index}>
-            <Link src="" target="_blank">
-              <figure>
-                <div className="carousel">
+            <figure>
+              <div
+                className="carousel"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link to="" target="_blank">
                   <div className="container">
                     <img src={slide.imgSrc} alt={`Slide ${index + 1}`} />
                   </div>
                   <figcaption className="activity-title">
                     <h3>{slide.text}</h3>
                   </figcaption>
-                </div>
-              </figure>
-            </Link>
+                </Link>
+              </div>
+            </figure>
           </div>
         ))}
       </div>
       <div className="shift">
-        <div className="btn" onClick={handlePrev}>
-          &lt;
+        <div className="btn" onClick={() => handleButtonClick(-1)}>
+          <img src={leftArrow} />
         </div>
-        <div className="btn" onClick={handleNext}>
-          &gt;
+        <div className="btn" onClick={() => handleButtonClick(1)}>
+          <img src={rightArrow} />
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Carousel;
+
+// 第二版
