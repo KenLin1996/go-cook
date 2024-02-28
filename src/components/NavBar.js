@@ -1,4 +1,5 @@
 import React from "react";
+import websiteLogo from "../picture/go-cook-12.png";
 import { Link, useNavigate } from "react-router-dom";
 
 const NavBar = ({ isSearchable }) => {
@@ -17,7 +18,7 @@ const NavBar = ({ isSearchable }) => {
       <nav className="layout-nav">
         <div className="layout-nav-icon">
           <Link to="/" className="">
-            <img src={"/favicon.ico /go-cook-12.png"} alt="My Image" />
+            <img src={websiteLogo} alt="websiteLogo" />
           </Link>
         </div>
         {isSearchable && (

@@ -1,11 +1,9 @@
 import React from "react";
-
-// import AuthorName from "./AuthorName";
 import { Link } from "react-router-dom";
 
 const CardContent = ({ recipe }) => {
   return (
-    <Link to="" className="card-content-link">
+    <Link to={recipe.recipeLink} className="card-content-link">
       <picture className="card-content-image">
         <img src={recipe.image} alt={recipe.name} />
       </picture>

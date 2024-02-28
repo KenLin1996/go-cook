@@ -1,9 +1,9 @@
-// NewSearch.js 版本
-.NewSearch {
+// Search.js 版本
+.Search {
   // max-width: 512px;
   max-width: 620px;
-  margin-left: auto;
-  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
   margin-top: 50px;
   margin-bottom: 5px;
 
@@ -89,11 +89,28 @@
       }
     }
     .recipe-categories {
+      .guideLine {
+        border: 3px solid red;
+        width: 120px;
+        padding: 4px 5px 6px 5px;
+        position: relative;
+        ::after {
+          content: "⬅ 點擊試玩，其餘功能正在開發中";
+
+          position: absolute;
+          left: 130px;
+          width: 300px;
+          height: 0px;
+          color: red;
+          font-size: 15px;
+          background-color: red;
+        }
+      }
       .recipe-categories-link {
         padding: 4px 16px;
 
         font-size: 12px;
-        // border: 1px solid black;
+
         border-radius: 14px;
 
         color: #4a4a4a;

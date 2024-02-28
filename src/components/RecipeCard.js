@@ -2,10 +2,10 @@ import React from "react";
 import CardHeader from "./CardHeader";
 import CardContent from "./CardContent";
 
-const RecipeCard = ({ recipes, title }) => {
+const RecipeCard = ({ recipes, title, link }) => {
   return (
     <section className="recipe-card">
-      <CardHeader title={title} />
+      <CardHeader title={title} link={link} />
       <div className="recipe-card-content">
         {recipes.map((recipe, index) => (
           <CardContent key={index} recipe={recipe} />

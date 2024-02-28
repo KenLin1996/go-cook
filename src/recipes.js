@@ -7,7 +7,7 @@ const recipes = [
   {
     id: "111",
     title: "清炒高麗菜",
-    category: "17",
+    category: "11",
     picture:
       "https://img-global.cpcdn.com/recipes/ab6f71303b661abf/1360x964cq70/%E6%B8%85%E7%82%92%E9%AB%98%E9%BA%97%E8%8F%9C-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.webp",
 
@@ -33,7 +33,7 @@ const recipes = [
   {
     id: "222",
     title: "高麗菜捲",
-    category: "17",
+    category: "11",
     picture:
       "https://img-global.cpcdn.com/recipes/a772124ca805a06c/1360x964cq70/%E9%AB%98%E9%BA%97%E8%8F%9C%E6%8D%B2-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.webp",
 

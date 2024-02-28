@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import magnifier from "/Users/ken/Desktop/go-cook-project/src/picture/search-icon.png";
-import close from "/Users/ken/Desktop/go-cook-project/src/picture/icons8-close-16.png";
+import magnifier from "../picture/search-icon.png";
+import close from "../picture/icons8-close-16.png";
 
 const IngredientFilter = ({ prop, mode, onFilter, recipesData }) => {
   const [inputValue, setInputValue] = useState("");

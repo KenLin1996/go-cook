@@ -4,27 +4,27 @@ const categories = [
     name: "葉菜類",
     subcategories: [
       {
-        id: 17,
+        id: 11,
         name: "高麗菜",
       },
       {
-        id: 18,
+        id: 12,
         name: "芥藍菜",
       },
       {
-        id: 19,
+        id: 13,
         name: "菠菜",
       },
       {
-        id: 20,
+        id: 14,
         name: "苦瓜",
       },
       {
-        id: 21,
+        id: 15,
         name: "小白菜",
       },
       {
-        id: 22,
+        id: 16,
         name: "莧菜",
       },
     ],

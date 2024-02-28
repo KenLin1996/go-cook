@@ -1,5 +1,5 @@
 import React from "react";
-import magnifier from "/Users/ken/Desktop/go-cook-project/src/picture/search-icon.png";
+import magnifier from "../picture/search-icon.png";
 
 const SearchWidget = () => {
   return (

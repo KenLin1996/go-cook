@@ -13,10 +13,10 @@ const Login = () => {
   const auth = getAuth(app);
 
   // 儲存 Email 的值
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("test123@gmail.com");
 
   // 儲存 password 的值
-  const [passwordValue, setPasswordValue] = useState("");
+  const [passwordValue, setPasswordValue] = useState("12345678");
 
   // 使用狀態來追蹤密碼是否可見
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
