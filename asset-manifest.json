@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/go-cook/static/css/main.4591c827.css",
-    "main.js": "/go-cook/static/js/main.d4c2c784.js",
+    "main.css": "/go-cook/static/css/main.09128393.css",
+    "main.js": "/go-cook/static/js/main.5a4ff132.js",
     "static/media/noodle.jpg": "/go-cook/static/media/noodle.bb3119ba4f247781a11e.jpg",
     "static/media/dumpling.jpg": "/go-cook/static/media/dumpling.47d9344f966f6a634923.jpg",
     "static/media/rice.jpg": "/go-cook/static/media/rice.bb64cad2ea15c94822b7.jpg",
+    "static/media/go-cook-12.png": "/go-cook/static/media/go-cook-12.fe35ad8a36b7e604e1d0.png",
     "static/media/geto.jpeg": "/go-cook/static/media/geto.4359cb352eff499db660.jpeg",
     "static/media/recipes-img-3.webp": "/go-cook/static/media/recipes-img-3.24e8924b49b1df9c16df.webp",
     "static/media/recipes-img-1.webp": "/go-cook/static/media/recipes-img-1.b0f09ee19d3c403104d7.webp",
     "static/media/recipes-img-2.webp": "/go-cook/static/media/recipes-img-2.39522c98a6bb7920f802.webp",
     "static/media/recipes-img-4.webp": "/go-cook/static/media/recipes-img-4.626fb70b9c5860c8317f.webp",
     "index.html": "/go-cook/index.html",
-    "main.4591c827.css.map": "/go-cook/static/css/main.4591c827.css.map",
-    "main.d4c2c784.js.map": "/go-cook/static/js/main.d4c2c784.js.map"
+    "main.09128393.css.map": "/go-cook/static/css/main.09128393.css.map",
+    "main.5a4ff132.js.map": "/go-cook/static/js/main.5a4ff132.js.map"
   },
   "entrypoints": [
-    "static/css/main.4591c827.css",
-    "static/js/main.d4c2c784.js"
+    "static/css/main.09128393.css",
+    "static/js/main.5a4ff132.js"
   ]
 }
