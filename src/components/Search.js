@@ -37,11 +37,11 @@ const Search = () => {
           </li>
         </ul>
         <div className="recipe-categories">
-          <div className="guideLine">
+          {/* <div className="guideLine"> */}
             <Link to="/categories" className="recipe-categories-link">
               所有食譜分類
             </Link>
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </div>

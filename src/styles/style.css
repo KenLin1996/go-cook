@@ -61,6 +61,27 @@ ul {
   border-radius: 0px;
 }
 
+.layout-nav-status .loggedIn-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.layout-nav-status .loggedIn-list li {
+  margin-left: 36px;
+}
+.layout-nav-status .loggedIn-list li .navItem {
+  display: flex;
+  align-items: center;
+}
+.layout-nav-status .loggedIn-list li .signOut {
+  padding: 4px 10px;
+  border: 1px solid #febc58;
+  border-radius: 5px;
+  background-color: inherit;
+  font-size: 18px;
+  font-weight: bold;
+  color: #febc58;
+}
 .layout-nav-status .logIn {
   cursor: pointer;
   margin-right: 15px;

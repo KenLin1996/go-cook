@@ -1,18 +1,22 @@
 import React, { useState } from "react";
-import app from "../utils/firebase";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../utils/firebase";
+// import app from "../utils/firebase";
+// import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
+import { Link, useNavigate } from "react-router-dom";
 
 import gmail from "../picture/gmail-icon.png";
 import facebook from "../picture/facebook.png";
 import phone from "../picture/phone-icon.png";
 import Button from "../components/button";
-import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   // 初始化身份驗證化服務
-  const auth = getAuth(app);
+  // const auth = getAuth(app);
 
   // 儲存 Email 的值
+  // const [email, setEmail] = useState("test123@gmail.com");
   const [email, setEmail] = useState("test123@gmail.com");
 
   // 儲存 password 的值
@@ -24,6 +28,9 @@ const Login = () => {
   // 使用狀態來控制是否使用 focus 效果
   const [isInputFocused, setIsInputFocused] = useState(false);
 
+  // error 提示
+  const [errorMessage, setErrorMessage] = useState("");
+
   // 切換密碼可見狀態的函數
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
@@ -33,17 +40,32 @@ const Login = () => {
   const navigate = useNavigate();
 
   // 登入
-  const handleClick = (event) => {
+  const handleLogIn = (event) => {
     console.log("有點擊成功");
     event.preventDefault(); // 阻止表單的默認提交行為
 
-    createUserWithEmailAndPassword(auth, email, passwordValue)
+    signInWithEmailAndPassword(auth, email, passwordValue)
       .then(() => {
-        console.log("註冊成功，導航到首頁");
+        console.log("登入成功，導航到首頁");
         navigate("/");
       })
       .catch((error) => {
-        console.error("註冊失敗", error.message);
+        console.log(error);
+        switch (error.code) {
+          case "auth/invalid-credential":
+            setErrorMessage("信箱不存在");
+            break;
+          case "auth/user-not-found":
+            setErrorMessage("信箱不存在");
+            break;
+          case "auth/invalid-email":
+            setErrorMessage("信箱格式不正確");
+            break;
+          case "auth/wrong-password":
+            setErrorMessage("密碼錯誤");
+            break;
+          default:
+        }
       });
   };
 
@@ -98,7 +120,6 @@ const Login = () => {
                 setEmail(e.target.value);
               }}
               placeholder="請輸入帳號或電子信箱"
-              autoComplete="username"
             />
             <div className="inputWrapper" style={inputWrapperStyle}>
               <input
@@ -111,7 +132,6 @@ const Login = () => {
                 placeholder="請輸入密碼"
                 minLength={8}
                 maxLength={50}
-                autoComplete="current-password"
                 onFocus={() => setIsInputFocused(true)}
                 onBlur={() => setIsInputFocused(false)}
               />
@@ -135,6 +155,8 @@ const Login = () => {
               </button>
             </div>
 
+            {errorMessage && <div>{errorMessage}</div>}
+
             <Button
               label={"登入"}
               fontSize={"18px"}
@@ -144,7 +166,7 @@ const Login = () => {
               buttonWidth={"50px"}
               buttonHeight={"30px"}
               marginTop={"20px"}
-              onClick={handleClick}
+              onClick={handleLogIn}
             />
           </form>
 
