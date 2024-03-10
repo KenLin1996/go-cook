@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/go-cook/static/css/main.09128393.css",
-    "main.js": "/go-cook/static/js/main.5a4ff132.js",
+    "main.css": "/go-cook/static/css/main.cf392c44.css",
+    "main.js": "/go-cook/static/js/main.26bf3140.js",
     "static/media/noodle.jpg": "/go-cook/static/media/noodle.bb3119ba4f247781a11e.jpg",
     "static/media/dumpling.jpg": "/go-cook/static/media/dumpling.47d9344f966f6a634923.jpg",
     "static/media/rice.jpg": "/go-cook/static/media/rice.bb64cad2ea15c94822b7.jpg",
@@ -12,11 +12,11 @@
     "static/media/recipes-img-2.webp": "/go-cook/static/media/recipes-img-2.39522c98a6bb7920f802.webp",
     "static/media/recipes-img-4.webp": "/go-cook/static/media/recipes-img-4.626fb70b9c5860c8317f.webp",
     "index.html": "/go-cook/index.html",
-    "main.09128393.css.map": "/go-cook/static/css/main.09128393.css.map",
-    "main.5a4ff132.js.map": "/go-cook/static/js/main.5a4ff132.js.map"
+    "main.cf392c44.css.map": "/go-cook/static/css/main.cf392c44.css.map",
+    "main.26bf3140.js.map": "/go-cook/static/js/main.26bf3140.js.map"
   },
   "entrypoints": [
-    "static/css/main.09128393.css",
-    "static/js/main.5a4ff132.js"
+    "static/css/main.cf392c44.css",
+    "static/js/main.26bf3140.js"
   ]
 }
